@@ -20,6 +20,7 @@ app.get('/', (_req, res) => {
 app.get('/character', CharacterController.getAll);
 app.get('/character/:id', CharacterController.findById);
 app.post('/character', CharacterController.create);
+app.put('/character/:id', CharacterController.update);
 app.delete('/character/:id', CharacterController.delete);
 
 app.use(Middleware.error);

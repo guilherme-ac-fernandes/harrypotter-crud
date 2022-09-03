@@ -22,6 +22,14 @@ module.exports = {
     return res.status(code).json(data);
   }),
 
+  update: rescue(async (req, res, next) => {
+    const { id } = req.params;
+    const { character } = req.body;
+    const { code, message } = await CharacterService.update(id, { character });
+    if (message) return next({ code, message });
+    return res.status(code).end();
+  }),
+
   delete: rescue(async (req, res) => {
     const { id } = req.params;
     const { code } = await CharacterService.delete(id);
