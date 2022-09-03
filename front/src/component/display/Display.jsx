@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import './Display.css';
-import HPContext from '../../context/HPContext';
 import axios from 'axios';
+import HPContext from '../../context/HPContext';
+import './Display.css';
 
 function Display() {
   const {
@@ -12,10 +12,9 @@ function Display() {
     setCharacter,
   } = useContext(HPContext);
 
-  const handleEdit = (char) => {
-    console.log(char);
-    setCharEdit(char.id);
-    setCharacter(char.character);
+  const handleEdit = ({ id, character  }) => {
+    setCharEdit(id);
+    setCharacter(character);
   };
 
   const handleDelete = async (id) => {
@@ -31,10 +30,10 @@ function Display() {
         <div key={ char.id } className="character-display">
           <h3>{char.character}</h3>
           <aside>
-            <button type="button" onClick={ () => handleEdit(char) }>
+            <button type="button" className="edit-button" onClick={ () => handleEdit(char) }>
               Edit
             </button>
-            <button type="button" onClick={ () => handleDelete(char.id) }>
+            <button type="button" className="delete-button" onClick={ () => handleDelete(char.id) }>
               Delete
             </button>
           </aside>

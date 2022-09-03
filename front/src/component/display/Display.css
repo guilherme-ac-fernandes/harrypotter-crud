@@ -20,6 +20,22 @@
   gap: 10px;
 }
 
-.character-display aside button {
-  padding: 5px;
+.edit-button {
+  background-color: #58a005;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: #e1321b;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
 }
