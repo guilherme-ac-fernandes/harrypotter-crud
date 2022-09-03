@@ -7,9 +7,9 @@ function Display() {
   const { loading, characters, setUpdateList } = useContext(HPContext);
 
   const handleEdit = (id) => {
-    console.log(id)
+    console.log(id);
   };
-  
+
   const handleDelete = async (id) => {
     console.log(id);
     const URL = `http://localhost:3001/character/${id}`;

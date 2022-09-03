@@ -4,13 +4,17 @@ import './Form.css';
 import HPContext from '../../context/HPContext';
 
 function Form() {
-  const [character, setCharacter] = useState('');
-  const { setUpdateList } = useContext(HPContext);
+  const {
+    character,
+    setCharacter,
+    setUpdateList,
+  } = useContext(HPContext);
 
   const handleClick = async () => {
-    await axios.post('http://localhost:3001/character', { character });
+    const URL = 'http://localhost:3001/character';
+    await axios.post(URL, { character });
     setUpdateList(true);
-  }
+  };
 
   return (
     <form className="form">
