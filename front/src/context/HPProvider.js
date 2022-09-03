@@ -5,6 +5,7 @@ import HPContext from './HPContext';
 function HPProvider({ children }) {
   const [characters, setCharacters] = useState([]);
   const [character, setCharacter] = useState('');
+  const [house, setHouse] = useState('Gryffindor');
   const [loading, setLoading] = useState(true);
   const [updateList, setUpdateList] = useState(false);
   const [charEdit, setCharEdit] = useState(0);
@@ -29,6 +30,8 @@ function HPProvider({ children }) {
   const contextValue = {
     character,
     setCharacter,
+    house,
+    setHouse,
     characters,
     setCharacters,
     loading,

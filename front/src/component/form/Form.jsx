@@ -10,6 +10,8 @@ function Form() {
     setCharacter,
     setUpdateList,
     setCharEdit,
+    house,
+    setHouse,
   } = useContext(HPContext);
 
   const handleAdd = async () => {
@@ -38,6 +40,23 @@ function Form() {
           onChange={ ({ target: { value } }) => setCharacter(value) }
         />
       </label>
+      <label htmlFor="house">
+        <select
+          name="house"
+          id="house"
+          value={ house }
+          onChange={ ({ target: { value } }) => setHouse(value) }
+        >
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+
+      </label>
+
+      
       {charEdit !== 0 ? (
         <button type="button" onClick={ handleEdit }>
           Edit Character
