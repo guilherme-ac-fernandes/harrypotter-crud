@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-const port = process.env.API_PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -15,4 +15,4 @@ app.get('/', (_req, res) => {
   })
 });
 
-app.listen(port, () => console.log(`Ouvindo na porta ${port}...`));
+app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}...`));
