@@ -6,11 +6,14 @@ function HPProvider({ children }) {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   
-
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:3001/character');
-    setCharacters( [{ character: 'Harry Potter' }]);
+    const fetch = async () => {
+      const { data } = await axios.get('http://localhost:3001/character');
+      console.log(data);
+      setCharacters(data);
+    };
+    fetch();
     setLoading(false);
   }, []);
 
