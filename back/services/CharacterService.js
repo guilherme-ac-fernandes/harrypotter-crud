@@ -1,4 +1,5 @@
 const { Character } = require('../database/models');
+const { validateQuantity } = require('./validation');
 
 const OBJECT_ATTRIBUTES = { attributes: { exclude: ['createdAt', 'updatedAt'] }};
 
@@ -16,11 +17,15 @@ module.exports = {
   },
 
   create: async ({ character }) => {
-    await Character.create({ character });
-    return { code: 200 };
+    const validation = validateQuantity({ character });
+    if (validation.code) return validation;
+    const newCharacter = await Character.create({ character });
+    return { code: 200, data: newCharacter };
   },
 
   update: async (id, { character }) => {
+    const validation = validateQuantity({ character });
+    if (validation.code) return validation;
     await Character.update({ character }, { where: { id } });
     return { code: 200 };
   },
