@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import './Form.css';
+import HPContext from '../../context/HPContext';
 
 function Form() {
   const [character, setCharacter] = useState('');
+  const { fetchCharacters } = useContext(HPContext);
 
   const handleClick = async () => {
     axios.post('http://localhost:3001/character', { character });
+    fetchCharacters();
   }
 
   return (
