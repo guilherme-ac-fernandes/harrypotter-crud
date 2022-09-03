@@ -17,6 +17,11 @@ module.exports = {
     return { code: 200, data: character };
   },
 
+  create: async ({ character }) => {
+    const { dataValues } = await Character.create({ character });
+    return { code: 200, data: dataValues };
+  },
+
   delete: async (id) => {
     await Character.destroy({ where: { id } });
     return { code: 204 };
