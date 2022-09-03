@@ -4,10 +4,18 @@ import HPContext from '../../context/HPContext';
 import axios from 'axios';
 
 function Display() {
-  const { loading, characters, setUpdateList } = useContext(HPContext);
+  const {
+    loading,
+    characters,
+    setUpdateList,
+    setCharEdit,
+    setCharacter,
+  } = useContext(HPContext);
 
-  const handleEdit = (id) => {
-    console.log(id);
+  const handleEdit = (char) => {
+    console.log(char);
+    setCharEdit(char.id);
+    setCharacter(char.character);
   };
 
   const handleDelete = async (id) => {
@@ -24,7 +32,7 @@ function Display() {
         <div key={ char.id } className="character-display">
           <h3>{char.character}</h3>
           <aside>
-            <button type="button" onClick={ () => handleEdit(char.id) }>
+            <button type="button" onClick={ () => handleEdit(char) }>
               Edit
             </button>
             <button type="button" onClick={ () => handleDelete(char.id) }>

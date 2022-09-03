@@ -6,7 +6,8 @@ function HPProvider({ children }) {
   const [characters, setCharacters] = useState([]);
   const [character, setCharacter] = useState('');
   const [loading, setLoading] = useState(true);
-  const [updateList, setUpdateList] = useState(false); 
+  const [updateList, setUpdateList] = useState(false);
+  const [charEdit, setCharEdit] = useState(0);
   
   useEffect(() => {
     setLoading(true);
@@ -26,12 +27,14 @@ function HPProvider({ children }) {
   };
 
   const contextValue = {
-    loading,
     character,
     setCharacter,
     characters,
     setCharacters,
+    loading,
     setUpdateList,
+    charEdit,
+    setCharEdit,
   };
 
   return (
