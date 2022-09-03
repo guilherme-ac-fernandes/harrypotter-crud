@@ -5,19 +5,22 @@ import HPContext from './HPContext';
 function HPProvider({ children }) {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [updateList, setUpdateList] = useState(false); 
   
   useEffect(() => {
     setLoading(true);
-    const fetch = async () => {
-      const { data } = await axios.get('http://localhost:3001/character');
-      setCharacters(data);
-    };
-    fetch();
+    updateCharacters();
     setLoading(false);
   }, []);
 
-  const fetchCharacters = async () => {
-    const { data } = await axios.get('http://localhost:3001/character');
+  useEffect(() => {
+    updateCharacters();
+    setUpdateList(false);
+  }, [updateList]);
+  
+  const updateCharacters = async () => {
+    const URL = 'http://localhost:3001/character';
+    const { data } = await axios.get(URL);
     setCharacters(data);
   };
 
@@ -25,7 +28,7 @@ function HPProvider({ children }) {
     loading,
     characters,
     setCharacters,
-    fetchCharacters,
+    setUpdateList,
   };
 
   return (

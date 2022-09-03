@@ -6,9 +6,21 @@ function Display() {
   const { loading, characters } = useContext(HPContext);
 
   return (
-    <section>
+    <section className="display">
       {loading && (<p>Loading</p>)}
-      {!loading && characters.map((char, index) => <h4 key={ index }>{char.character}</h4>)}
+      {!loading && characters.map((char, index) => (
+        <div key={ index } className="character-display">
+          <h3>{char.character}</h3>
+          <aside>
+            <button type="button" onClick={ () => {} }>
+              Edit
+            </button>
+            <button type="button" onClick={ () => {} }>
+              Delete
+            </button>
+          </aside>
+        </div>
+      ))}
     </section>
   );
 }

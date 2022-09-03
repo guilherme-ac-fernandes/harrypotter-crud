@@ -5,11 +5,11 @@ import HPContext from '../../context/HPContext';
 
 function Form() {
   const [character, setCharacter] = useState('');
-  const { fetchCharacters } = useContext(HPContext);
+  const { setUpdateList } = useContext(HPContext);
 
   const handleClick = async () => {
-    axios.post('http://localhost:3001/character', { character });
-    fetchCharacters();
+    await axios.post('http://localhost:3001/character', { character });
+    setUpdateList(true);
   }
 
   return (
