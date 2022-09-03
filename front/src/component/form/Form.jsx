@@ -9,6 +9,7 @@ function Form() {
     character,
     setCharacter,
     setUpdateList,
+    setCharEdit,
   } = useContext(HPContext);
 
   const handleAdd = async () => {
@@ -19,6 +20,7 @@ function Form() {
   };
 
   const handleEdit = async () => {
+    setCharEdit(0);
     const URL = `http://localhost:3001/character/${charEdit}`;
     await axios.put(URL, { character });
     setUpdateList(true);
@@ -37,21 +39,14 @@ function Form() {
         />
       </label>
       {charEdit !== 0 ? (
-        <button
-          type="button"
-          onClick={ handleEdit }
-        >
+        <button type="button" onClick={ handleEdit }>
           Edit Character
         </button>
       ) : (
-        <button
-          type="button"
-          onClick={ handleAdd }
-        >
+        <button type="button" onClick={ handleAdd }>
           Add Character
         </button>
       ) }
-      
     </form>
   );
 }

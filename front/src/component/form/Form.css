@@ -4,11 +4,20 @@
 }
 
 .form input {
+  border: solid 1px #e1e5eb;
+  border-radius: 10px;
+  outline: none;
   padding: 10px;
   width: 300px;
 }
 
 .form button {
+  background-color: #833c33;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
   padding: 10px;
   width: 150px;
 }
