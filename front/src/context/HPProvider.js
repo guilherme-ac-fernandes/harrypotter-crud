@@ -10,7 +10,6 @@ function HPProvider({ children }) {
     setLoading(true);
     const fetch = async () => {
       const { data } = await axios.get('http://localhost:3001/character');
-      console.log(data);
       setCharacters(data);
     };
     fetch();
@@ -18,8 +17,8 @@ function HPProvider({ children }) {
   }, []);
 
   const fetchCharacters = async () => {
-    const result = await axios.get('http://localhost:3001/character');
-    setCharacters(result);
+    const { data } = await axios.get('http://localhost:3001/character');
+    setCharacters(data);
   };
 
   const contextValue = {
