@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { CharacterController } = require('./controllers');
+const Middleware = require('./middleware');
 
 const PORT = process.env.PORT || 3001;
 
@@ -17,5 +18,7 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/character', CharacterController.getAll);
+
+app.use(Middleware.error);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}...`));
