@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  front:
+  
+  back:
+    
+  db:
+    
+
+networks:
+  default:
+    name: harry_potter_api_net
