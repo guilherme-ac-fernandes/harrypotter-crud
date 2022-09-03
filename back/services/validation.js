@@ -18,9 +18,7 @@ const handleCallback = (schema, variable) => {
   return true;
 };
 
-
 const validateQuantity = (object) => handleCallback(characterSchema, object);
-
 
 module.exports = {
   validateQuantity,
