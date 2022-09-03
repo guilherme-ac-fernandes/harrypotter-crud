@@ -19,6 +19,7 @@ app.get('/', (_req, res) => {
 
 app.get('/character', CharacterController.getAll);
 app.get('/character/:id', CharacterController.findById);
+app.delete('/character/:id', CharacterController.delete);
 
 app.use(Middleware.error);
 

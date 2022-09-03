@@ -16,4 +16,9 @@ module.exports = {
     if (!character) return { code: 404, message: 'Character not exist' };
     return { code: 200, data: character };
   },
+
+  delete: async (id) => {
+    await Character.destroy({ where: { id } });
+    return { code: 204 };
+  },
 };
