@@ -2,12 +2,46 @@ version: "3"
 
 services:
   front:
-  
+    build: ./front
+    container_name: harry-potter-front
+    restart: always
+    depends_on:
+      - db
+      - back
+    ports:
+      - 3000:3000
+    
   back:
-    
+    image: node:16.14
+    container_name: harry-potter-back
+    tty: true
+    stdin_open: true
+    restart: always
+    working_dir: /home/node/app
+    volumes:
+      - ./back/:/home/node/app
+    depends_on:
+      - db
+    command: bash -c "npm install && npm run start:db && npm run dev"
+    ports:
+      - 3001:3001
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: harry-potter-api
+      HOSTNAME: db
+      PORT: '3001'
+      
   db:
+    image: mysql:5.7
+    container_name: harry_potter_db
+    platform: linux/x86_64
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - 3307:3306
     
-
 networks:
   default:
     name: harry_potter_api_net
