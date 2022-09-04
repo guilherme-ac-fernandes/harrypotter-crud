@@ -19,14 +19,14 @@ module.exports = {
   create: async ({ character, house }) => {
     const validation = validateQuantity({ character, house });
     if (validation.code) return validation;
-    const newCharacter = await Character.create({ character });
+    const newCharacter = await Character.create({ character, house });
     return { code: 200, data: newCharacter };
   },
 
   update: async (id, { character, house }) => {
     const validation = validateQuantity({ character, house });
     if (validation.code) return validation;
-    await Character.update({ character }, { where: { id } });
+    await Character.update({ character, house }, { where: { id } });
     return { code: 200 };
   },
 

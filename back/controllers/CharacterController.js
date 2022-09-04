@@ -17,6 +17,7 @@ module.exports = {
 
   create: rescue(async (req, res, next) => {
     const { character, house } = req.body;
+    console.log(req.body);
     const { data, code, message } = await CharacterService.create({ character, house });
     if (message) return next({ code, message });
     console.log({ data, code, message });
@@ -25,7 +26,6 @@ module.exports = {
 
   update: rescue(async (req, res, next) => {
     const { id } = req.params;
-    const { character, house } = req.body;
     const { code, message } = await CharacterService.update(id, { character, house });
     if (message) return next({ code, message });
     return res.status(code).end();
