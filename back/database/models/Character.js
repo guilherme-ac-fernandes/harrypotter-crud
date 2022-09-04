@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     character: DataTypes.STRING,
-
+    house: DataTypes.STRING,
   });
 
   return Character;
