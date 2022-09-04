@@ -12,6 +12,15 @@
   width: 300px;
 }
 
+.form select {
+  border: solid 1px #e1e5eb;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  font-size: medium;
+  width: 150px;
+}
+
 .form button {
   background-color: #833c33;
   border: none;
