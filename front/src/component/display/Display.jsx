@@ -14,11 +14,13 @@ function Display() {
     setUpdateList,
     setCharEdit,
     setCharacter,
+    setHouse,
   } = useContext(HPContext);
 
-  const handleEdit = ({ id, character  }) => {
+  const handleEdit = ({ id, character, house  }) => {
     setCharEdit(id);
     setCharacter(character);
+    setHouse(house);
   };
 
   const handleDelete = async (id) => {
