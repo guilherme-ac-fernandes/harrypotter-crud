@@ -39,3 +39,12 @@
   cursor: pointer;
   padding: 10px;
 }
+
+.house-logo {
+  width: 8%;
+}
+
+.unknown {
+  width: 8%;
+  visibility: hidden;
+}
