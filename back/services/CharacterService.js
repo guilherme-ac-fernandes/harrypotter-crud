@@ -16,15 +16,15 @@ module.exports = {
     return { code: 200, data: character };
   },
 
-  create: async ({ character }) => {
-    const validation = validateQuantity({ character });
+  create: async ({ character, house }) => {
+    const validation = validateQuantity({ character, house });
     if (validation.code) return validation;
     const newCharacter = await Character.create({ character });
     return { code: 200, data: newCharacter };
   },
 
-  update: async (id, { character }) => {
-    const validation = validateQuantity({ character });
+  update: async (id, { character, house }) => {
+    const validation = validateQuantity({ character, house });
     if (validation.code) return validation;
     await Character.update({ character }, { where: { id } });
     return { code: 200 };
