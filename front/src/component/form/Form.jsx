@@ -25,7 +25,6 @@ function Form() {
   const handleEdit = async () => {
     setCharEdit(0);
     const URL = `http://localhost:3001/character/${charEdit}`;
-    console.log({ character, house });
     await axios.put(URL, { character, house });
     setUpdateList(true);
     setCharacter('');
