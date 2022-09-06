@@ -19,7 +19,6 @@ module.exports = {
     const { character, house } = req.body;
     const { data, code, message } = await CharacterService.create({ character, house });
     if (message) return next({ code, message });
-    console.log({ data, code, message });
     return res.status(code).json(data);
   }),
 

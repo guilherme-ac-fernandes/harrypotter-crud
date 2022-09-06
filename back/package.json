@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
+    "lint": "eslint --ext .js, .",
     "test": "",
     "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
@@ -24,6 +25,9 @@
     "sequelize": "^6.21.4"
   },
   "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.19",
     "sequelize-cli": "^6.4.1"
   }

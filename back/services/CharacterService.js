@@ -1,7 +1,7 @@
 const { Character } = require('../database/models');
 const { validateQuantity } = require('./validation');
 
-const OBJECT_ATTRIBUTES = { attributes: { exclude: ['createdAt', 'updatedAt'] }};
+const OBJECT_ATTRIBUTES = { attributes: { exclude: ['createdAt', 'updatedAt'] } };
 
 module.exports = {
   getAll: async () => {
