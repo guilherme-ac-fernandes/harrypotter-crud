@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import HPContext from '../../context/HPContext';
 import './Form.css';
@@ -38,9 +38,9 @@ function Form() {
         <input
           type="text"
           id="character"
-          value={ character }
+          value={character}
           placeholder="Insert Character"
-          onChange={ ({ target: { value } }) => setCharacter(value) }
+          onChange={({ target: { value } }) => setCharacter(value)}
         />
       </label>
 
@@ -48,8 +48,8 @@ function Form() {
         <select
           name="house"
           id="house"
-          value={ house }
-          onChange={ ({ target: { value } }) => setHouse(value) }
+          value={house}
+          onChange={({ target: { value } }) => setHouse(value)}
         >
           <option value="Gryffindor">Gryffindor</option>
           <option value="Hufflepuff">Hufflepuff</option>
@@ -60,14 +60,14 @@ function Form() {
       </label>
 
       {charEdit !== 0 ? (
-        <button type="button" onClick={ handleEdit }>
+        <button type="button" onClick={handleEdit}>
           Edit Character
         </button>
-        ) : (
-          <button type="button" onClick={ handleAdd }>
-            Add Character
-          </button>
-        ) }
+      ) : (
+        <button type="button" onClick={handleAdd}>
+          Add Character
+        </button>
+      ) }
     </form>
   );
 }

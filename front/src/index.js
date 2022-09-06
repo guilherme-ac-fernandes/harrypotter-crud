@@ -9,5 +9,5 @@ root.render(
     <HPProvider>
       <App />
     </HPProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
