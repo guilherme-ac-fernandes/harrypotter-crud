@@ -1,8 +1,14 @@
+// Correção do linter para utilização de jest e mocha proveniente dos fontes presentes no Stack OverFlow
+// source 1: https://stackoverflow.com/questions/55807824/describe-is-not-defined-when-installing-jest
+// source 2: https://stackoverflow.com/questions/30018271/javascript-standard-style-does-not-recognize-mocha
+
 {
     "env": {
         "commonjs": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true,
+        "mocha": true
     },
     "extends": "airbnb-base",
     "overrides": [
