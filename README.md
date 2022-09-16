@@ -10,7 +10,6 @@ Aplicação contendo Front e Back para criação e listagem de personagens prese
 - Para rodar a aplicação localmente, realize o clone do projeto e utilize os comandos a seguir para inicializar:
 
 ```
-npm install // para instalar as dependências
 docker-compose up -d // para iniciar a aplicação
 docker-compose down // para parar completamente a aplicação
 ```
