@@ -14,7 +14,7 @@ docker-compose up -d // para iniciar a aplicação
 docker-compose down // para parar completamente a aplicação
 ```
 
-**Observação:** para iniciar a aplicação é necessário Docker e MySQL presente na máquina do usuário, tendo em vista que após o comando para inicialização do docker o comando realiza a criação do banco de dados bem como a inicialização do Front e Back, resultado em alguns segundos de processamento.
+**Observação:** para iniciar a aplicação é necessário ter o Docker na máquina do usuário, tendo em vista que após o comando para inicialização do docker o comando realiza a criação do banco de dados bem como a inicialização do Front e Back, resultado em alguns segundos de processamento.
 
 ### Demonstração
 
