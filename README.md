@@ -1,4 +1,4 @@
-# Harry Potter - FullStack 🪄
+# Harry Potter - FullStack 🪄🧙🏻‍♂️
 
 Aplicação contendo Front e Back para criação e listagem de personagens presentes na franquia Harry Potter. O Back-end é capaz de listar todos os personagens, bem como criar, editar e deletar os personagens por meio do formulário presente no Front-End.
 
